@@ -4,8 +4,8 @@
 
 ### Team Members
 - **Mahmoud Raslan** – Team Leader / DevOps & Cloud  
-- **Salma Hamed** – Frontend Developer  
-- **Mariam Ahmed** – Backend Developer  
+- **Salma Hamed** – Frontend Developer & Monitoring
+- **Mariam Ahmed** – Backend Developer & Monitoring
 - **Mazen Farouk** – DevOps Engineer (Monitoring & Automation)  
 - **Rehab Hassan** – Database & Documentation  
 - **Omar Hossam** – QA & Testing  
