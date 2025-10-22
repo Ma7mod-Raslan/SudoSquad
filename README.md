@@ -65,11 +65,11 @@ By the end, we aim to deliver a fully functional, persistent, and monitored webs
 | Team Member | Role | Responsibilities |
 |--------------|------|------------------|
 | **Mahmoud Raslan** | DevOps Engineer | Containerization (Docker), CI/CD setup, Prometheus & Grafana configuration |
-| **Salma Hamed** | Backend Developer | Core API logic for URL shortening and redirect handling |
-| **Mazen Farouk** | Database & Integration Engineer | SQLite database integration, data persistence, backup strategy |
-| **Omar Hossam** | Frontend Developer | Web UI development and interface optimization |
-| **Mariam Ahmed** | Designer | UI/UX design, logo creation, and project branding |
-| **Rehab** | Documentation & QA | Writing documentation, testing features, and ensuring quality |
+| **Salma Hamed** | DevOps Engineer | Core API logic for URL shortening and redirect handling |
+| **Mazen Farouk** | DevOps Engineer | SQLite database integration, data persistence, backup strategy |
+| **Omar Hossam** | DevOps Engineer | Web UI development and interface optimization |
+| **Mariam Ahmed** | DevOps Engineer | UI/UX design, logo creation, and project branding |
+| **Rehab** | DevOps Engineer | Writing documentation, testing features, and ensuring quality |
 
 ---
 
