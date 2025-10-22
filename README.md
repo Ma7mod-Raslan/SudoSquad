@@ -1,58 +1,100 @@
-# 📌 Project: Monitoring a Containerized URL Shortener Webservice  
-
-## 👥 Team Name: SudoSquad  
-
-### Team Members
-- **Mahmoud Raslan** – Team Leader / DevOps & Cloud  
-- **Salma Hamed** – Frontend Developer & Monitoring
-- **Mariam Ahmed** – Backend Developer & Monitoring
-- **Mazen Farouk** – DevOps Engineer (Monitoring & Automation)  
-- **Rehab Hassan** – Database & Documentation  
-- **Omar Hossam** – QA & Testing  
+# **Monitoring a Containerized URL Shortener Webservice**
 
 ---
 
-## 💡 Project Idea
-Our project is to build and monitor a **containerized URL shortener webservice**.  
-The application will allow users to shorten long URLs and handle redirects. We will containerize the service using **Docker**, store data with **SQLite**, and expose custom performance metrics.  
+## **Project Idea**
+
+Our project is to build and monitor a containerized URL shortener webservice.  
+The application allows users to shorten long URLs and handle redirects.  
+We will containerize the service using **Docker**, store data with **SQLite**, and expose **custom performance metrics**.  
+
 **Prometheus** will collect these metrics, and **Grafana** will be used to create dashboards and alerts for monitoring.  
-By the end, we will deliver a **fully functional, persistent, and monitored webservice** with complete documentation.  
+By the end, we aim to deliver a fully functional, persistent, and monitored webservice with complete documentation.
 
 ---
 
-## 🗂 Project Plan  
+## **Team Members (SudoSquad)**
 
-### **Week 1: Build & Containerize the URL Shortener**
-- Develop the webservice with 2 endpoints:  
-  - `/shorten` → Accepts a long URL and returns a short code  
-  - `/<short_code>` → Redirects to the original URL  
-- Use **SQLite** for storing URLs  
-- Write a **Dockerfile** & initial `docker-compose.yml`  
-
-### **Week 2: Instrumentation with Prometheus**
-- Add custom metrics: shortened count, redirects, 404 errors, request latency  
-- Configure **Prometheus** scraping from `/metrics` endpoint  
-- Update `docker-compose.yml` to include Prometheus  
-
-### **Week 3: Visualization with Grafana**
-- Add **Grafana** to the stack  
-- Connect Prometheus as data source  
-- Build dashboards: URL creation rate, latency, 404 errors, total counts  
-
-### **Week 4: Alerts, Persistence & Documentation**
-- Configure **alerts** in Grafana  
-- Use **Docker volumes** for SQLite, Prometheus & Grafana persistence  
-- Final testing & verification  
-- Write complete **README.md** and API documentation  
+- **Mahmoud Raslan**  
+- **Salma Hamed**  
+- **Mazen Farouk**  
+- **Omar Hossam**  
+- **Mariam Ahmed**  
+- **Rehab**
 
 ---
 
-## 🎯 Roles of Each Member
-- **Mahmoud Raslan (Team Leader):** Oversees project flow, manages repo, handles DevOps tasks (Docker, Compose, CI/CD).  
-- **Salma Hamed:** Works on Frontend (if any UI needed) and assists in API testing.  
-- **Mariam Ahmed:** Implements Backend logic for URL shortening and metrics integration.  
-- **Mazen Farouk:** Focuses on monitoring (Prometheus & Grafana), metrics setup, alerting.  
-- **Rehab Hassan:** Handles Database (SQLite) integration, ensures data persistence, and leads documentation.  
-- **Omar Hossam:** Testing (unit + integration), ensures reliability, assists with bug fixing and QA.  
+## **Work Plan**
+
+### **1. Research & Analysis**
+- Study existing URL shortener services and monitoring tools.  
+- Research Docker containerization, Prometheus metrics, and Grafana dashboards.
+
+### **2. Audience Personas**
+- Developers who need an easy-to-deploy, self-hosted URL shortener.  
+- Teams or companies seeking performance insights through metrics and monitoring.
+
+### **3. Visual Identity**
+- Design a simple and professional brand for the web interface and dashboards.
+
+### **4. Logo Design**
+- Create a minimal logo representing links, monitoring, or performance.
+
+### **5. Main Designs**
+- Build the main UI for URL input and results.  
+- Implement responsive design for usability on multiple devices.
+
+### **6. Poster**
+- Design a poster summarizing the project’s goals, architecture, and tools.
+
+### **7. Complementary Products**
+- Write documentation for setup and usage.  
+- Include API documentation and dashboard configuration steps.
+
+### **8. Review & Finalization**
+- Perform code review and container testing.  
+- Optimize metrics collection and alert configurations.
+
+### **9. Final Presentation**
+- Demonstrate the full system, showing metrics collection and dashboards live.
 
 ---
+
+## **Roles & Responsibilities**
+
+| Team Member | Role | Responsibilities |
+|--------------|------|------------------|
+| **Mahmoud Raslan** | DevOps Engineer | Containerization (Docker), CI/CD setup, Prometheus & Grafana configuration |
+| **Salma Hamed** | Backend Developer | Core API logic for URL shortening and redirect handling |
+| **Mazen Farouk** | Database & Integration Engineer | SQLite database integration, data persistence, backup strategy |
+| **Omar Hossam** | Frontend Developer | Web UI development and interface optimization |
+| **Mariam Ahmed** | Designer | UI/UX design, logo creation, and project branding |
+| **Rehab** | Documentation & QA | Writing documentation, testing features, and ensuring quality |
+
+---
+
+## **KPIs (Key Performance Indicators)**
+
+- **System Uptime:** ≥ 99%  
+- **Response Time:** ≤ 200ms average  
+- **Error Rate:** < 1%  
+- **User Adoption:** Number of successfully shortened URLs  
+- **Dashboard Accuracy:** Real-time metric updates with minimal delay  
+
+---
+
+## **Instructor**
+
+**Eng. Islam Reda**
+
+---
+
+## **Project Files**
+
+You can find the full project files and source code in the repository.
+
+---
+
+## **License**
+
+This project is licensed under the **MIT License**.
