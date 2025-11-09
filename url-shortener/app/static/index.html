@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener Dashboard</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Side: Input Form -->
+        <div class="card shortener-card">
+            <div class="card-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path></svg>
+                <h3>URL Shortener Service</h3>
+            </div>
+            <form id="shorten-form">
+                <label for="long-url">Enter your long URL here</label>
+                <input type="url" id="long-url" name="long-url" placeholder="https://example.com/very/long/url/path" required>
+                <button type="submit">Shorten</button>
+            </form>
+             <div id="result" class="hidden">
+                <p>Short URL: <a href="#" target="_blank"></a></p>
+            </div>
+        </div>
+
+        <!-- Right Side: Stats and Graphs -->
+        <div class="stats-grid">
+            <!-- Stat Cards -->
+            <div class="card stat-card">
+                <p class="stat-title">Total URLs</p>
+                <div id="total-urls-value" class="stat-value">...</div>
+                <img src="https://i.imgur.com/vHqB5N8.png" alt="Blue sparkline" class="sparkline"/>
+            </div>
+            <div class="card stat-card">
+                <p class="stat-title">Requests/hr</p>
+                <div class="stat-value green">92</div>
+                <img src="https://i.imgur.com/JbSPb2C.png" alt="Green sparkline" class="sparkline"/>
+            </div>
+
+            <!-- Request Rate Chart -->
+            <div class="card chart-card">
+                <h4>Request Rate (24h)</h4>
+                <canvas id="requestRateChart"></canvas>
+            </div>
+
+            <!-- Total URLs Created Chart -->
+            <div class="card chart-card">
+                <h4>Total URLs Created</h4>
+                <canvas id="totalUrlsChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
