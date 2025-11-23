@@ -1,0 +1,33 @@
+groups:
+  - name: url-shortener-alerts
+    interval: 1m
+    rules:
+      - alert: High404Rate
+        expr: rate(lookups_404_total[5m]) > 0.05
+        for: 1m
+        labels:
+          severity: warning
+          service: url-shortener
+        annotations:
+          summary: "High 404 lookup rate on URL Shortener"
+          description: "lookups_404_total rate > 0.05 for 1m."
+
+      - alert: HighP95Latency
+        expr: histogram_quantile(0.95, sum(rate(request_latency_seconds_bucket[5m])) by (le, endpoint)) > 0.5
+        for: 1m
+        labels:
+          severity: critical
+          service: url-shortener
+        annotations:
+          summary: "High P95 request latency"
+          description: "P95 latency > 0.5s for 1m."
+
+      - alert: NoShorteningActivity
+        expr: rate(urls_shortened_total[10m]) < 0.01
+        for: 10m
+        labels:
+          severity: warning
+          service: url-shortener
+        annotations:
+          summary: "No shortening activity"
+          description: "No new shortened URLs in last 10 minutes."

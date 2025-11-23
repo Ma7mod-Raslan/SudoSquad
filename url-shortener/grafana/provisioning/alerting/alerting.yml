@@ -1,0 +1,3 @@
+# grafana/provisioning/alerting/alerting.yml
+rule_files:
+  - /etc/grafana/rules/*.yaml
