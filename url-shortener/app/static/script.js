@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- NEW: Function to fetch and update stats ---
     const totalUrlsElement = document.getElementById('total-urls-value');
-    
+
     async function updateStats() {
         try {
             const response = await fetch('/stats');
@@ -92,16 +92,16 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', async function (event) {
         event.preventDefault();
         const longUrl = document.getElementById('long-url').value;
-        
+
         console.log("Submitting URL:", longUrl);
-        
+
         try {
             const response = await fetch(`/shorten?long_url=${encodeURIComponent(longUrl)}`, {
                 method: 'POST',
             });
-            
+
             if (!response.ok) {
-                 throw new Error('Network response was not ok');
+                throw new Error('Network response was not ok');
             }
 
             const data = await response.json();
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resultLink.href = `http://${shortUrl}`;
             resultLink.textContent = shortUrl;
             resultDiv.classList.remove('hidden');
-            
+
             // NEW: Update stats after successfully creating a new URL
             updateStats();
 
