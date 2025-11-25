@@ -87,7 +87,7 @@ You can find the full project files and source code in the repository.
 
 ---
 
-## 🐳 Running Locally using (Docker Compose)
+## 🐳 Running Locally use (Docker Compose)
 
 ```bash
 docker-compose up --build
