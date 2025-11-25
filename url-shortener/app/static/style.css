@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary-blue: #3b82f6;
+    --primary-green: #56A64B;
     --light-blue: #eff6ff;
     --dark-blue: #2563eb;
     --background-color: #f8fafc;
@@ -63,7 +63,7 @@ body {
 }
 
 .card-header svg {
-    color: var(--primary-blue);
+    color: var(--primary-green);
 }
 
 #shorten-form label {
@@ -86,7 +86,7 @@ body {
 
 #shorten-form input:focus {
     outline: none;
-    border-color: var(--primary-blue);
+    border-color: var(--primary-green);
     box-shadow: 0 0 0 3px var(--light-blue);
 }
 
@@ -95,7 +95,7 @@ body {
     padding: 0.8rem 1rem;
     border: none;
     border-radius: 0.5rem;
-    background-color: var(--primary-blue);
+    background-color: var(--primary-green);
     color: white;
     font-size: 1rem;
     font-weight: 600;

@@ -140,6 +140,7 @@ def redirect_to_long_url(short_code: str, db: Session = Depends(database.get_db)
         elapsed = time.perf_counter() - start_time
         REQUEST_LATENCY.labels(endpoint="redirect").observe(elapsed)
 
+app.mount("/static", StaticFiles(directory="/app/static"), name="static")
 
 @app.get("/")
 async def read_index():
