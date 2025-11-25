@@ -1,92 +1,82 @@
-# **Monitoring a Containerized URL Shortener Webservice**
+# URL Shortener Webservice  
+A complete, containerized URL-shortening service with monitoring, dashboards, alerting, and full AWS deployment.
+
+This project was built following the DevOps Engineer structured roadmap and includes:
+
+- Containerized FastAPI application  
+- PostgreSQL persistence  
+- Prometheus metrics  
+- Grafana dashboards  
+- Grafana alerting + Slack integration  
+- Terraform IaC for AWS deployment  
+- Automated provisioning (Prometheus, Grafana, datasources, dashboards)
 
 ---
 
-## **Project Idea**
+## 🚀 Features
 
-Our project is to build and monitor a containerized URL shortener webservice.  
-The application allows users to shorten long URLs and handle redirects.  
-We will containerize the service using **Docker**, store data with **SQLite**, and expose **custom performance metrics**.  
+### 🔗 URL Shortening Service  
+- Shortens long URLs  
+- Redirects using unique short codes  
+- Persists data using PostgreSQL  
 
-**Prometheus** will collect these metrics, and **Grafana** will be used to create dashboards and alerts for monitoring.  
-By the end, we aim to deliver a fully functional, persistent, and monitored webservice with complete documentation.
+### 📊 Monitoring & Metrics  
+- `/metrics` endpoint exposing Prometheus metrics  
+- Custom counters & histograms:
+  - `urls_shortened_total`
+  - `redirects_total`
+  - `lookups_404_total`
+  - `request_latency_seconds`
 
----
+### 📈 Grafana Dashboard  
+- URL creation rate  
+- Redirect rate  
+- 404 lookup rate  
+- P95 latency  
+- Real-time visual updates
 
-## **Team Members (SudoSquad)**
+### 🚨 Alerting  
+Grafana alerts:
+- High 404 lookup rate  
+- High P95 latency  
+- Redirect traffic dropped to zero  
 
-- **Mahmoud Raslan**  
-- **Salma Hamed**  
-- **Mazen Farouk**  
-- **Omar Hossam**  
-- **Mariam Ahmed**  
-- **Rehab**
-
----
-
-## **Work Plan**
-
-### **1. Research & Analysis**
-- Study existing URL shortener services and monitoring tools.  
-- Research Docker containerization, Prometheus metrics, and Grafana dashboards.
-
-### **2. Audience Personas**
-- Developers who need an easy-to-deploy, self-hosted URL shortener.  
-- Teams or companies seeking performance insights through metrics and monitoring.
-
-### **3. Visual Identity**
-- Design a simple and professional brand for the web interface and dashboards.
-
-### **4. Logo Design**
-- Create a minimal logo representing links, monitoring, or performance.
-
-### **5. Main Designs**
-- Build the main UI for URL input and results.  
-- Implement responsive design for usability on multiple devices.
-
-### **6. Poster**
-- Design a poster summarizing the project’s goals, architecture, and tools.
-
-### **7. Complementary Products**
-- Write documentation for setup and usage.  
-- Include API documentation and dashboard configuration steps.
-
-### **8. Review & Finalization**
-- Perform code review and container testing.  
-- Optimize metrics collection and alert configurations.
-
-### **9. Final Presentation**
-- Demonstrate the full system, showing metrics collection and dashboards live.
+Alerts are sent to Slack via webhook.
 
 ---
 
-## **Roles & Responsibilities**
+## 📂 Project Structure
 
-| Team Member | Role | Responsibilities |
-|--------------|------|------------------|
-| **Mahmoud Raslan** | DevOps Engineer | Containerization (Docker), CI/CD setup, Prometheus & Grafana configuration |
-| **Salma Hamed** | DevOps Engineer | Core API logic for URL shortening and redirect handling |
-| **Mazen Farouk** | DevOps Engineer | SQLite database integration, data persistence, backup strategy |
-| **Omar Hossam** | DevOps Engineer | Web UI development and interface optimization |
-| **Mariam Ahmed** | DevOps Engineer | UI/UX design, logo creation, and project branding |
-| **Rehab** | DevOps Engineer | Writing documentation, testing features, and ensuring quality |
-
----
-
-## **KPIs (Key Performance Indicators)**
-
-- **System Uptime:** ≥ 99%  
-- **Response Time:** ≤ 200ms average  
-- **Error Rate:** < 1%  
-- **User Adoption:** Number of successfully shortened URLs  
-- **Dashboard Accuracy:** Real-time metric updates with minimal delay  
-
----
-
-## **Instructor**
-
-**Eng. Islam Reda**
-
+url-shortener/
+├── app/
+│   ├── main.py
+│   ├── models.py
+│   ├── database.py
+│   └── static/
+│       ├── index.html
+│       ├── style.css
+│       └── script.js
+├── grafana/
+│   ├── dashboards_json/
+│   └── provisioning/
+│       ├── dashboards/
+│       ├── datasources/
+│       └── alerting/
+├── monitoring/
+│   └── prometheus.yml
+├── infra/
+│   ├── vpc/
+│   ├── ec2/
+│   ├── ecr/
+│   ├── security/
+│   ├── providers.tf
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+├── docker-compose.yaml
+├── Dockerfile
+├── requirements.txt
+└── README.md
 ---
 
 ## **Project Files**
@@ -96,6 +86,7 @@ You can find the full project files and source code in the repository.
 
 ---
 
-## **License**
+## 🐳 Running Locally (Docker Compose)
 
-This project is licensed under the **MIT License**.
+```bash
+docker-compose up --build
