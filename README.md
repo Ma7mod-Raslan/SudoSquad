@@ -49,34 +49,35 @@ Alerts are sent to Slack via webhook.
 
 url-shortener/
 ├── app/
-│   ├── main.py
-│   ├── models.py
-│   ├── database.py
-│   └── static/
-│       ├── index.html
-│       ├── style.css
-│       └── script.js
+│ ├── main.py
+│ ├── models.py
+│ ├── database.py
+│ └── static/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
 ├── grafana/
-│   ├── dashboards_json/
-│   └── provisioning/
-│       ├── dashboards/
-│       ├── datasources/
-│       └── alerting/
+│ ├── dashboards_json/
+│ └── provisioning/
+│ ├── dashboards/
+│ ├── datasources/
+│ └── alerting/
 ├── monitoring/
-│   └── prometheus.yml
+│ └── prometheus.yml
 ├── infra/
-│   ├── vpc/
-│   ├── ec2/
-│   ├── ecr/
-│   ├── security/
-│   ├── providers.tf
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
+│ ├── vpc/
+│ ├── ec2/
+│ ├── ecr/
+│ ├── security/
+│ ├── providers.tf
+│ ├── main.tf
+│ ├── variables.tf
+│ └── outputs.tf
 ├── docker-compose.yaml
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
+
 ---
 
 ## **Project Files**
