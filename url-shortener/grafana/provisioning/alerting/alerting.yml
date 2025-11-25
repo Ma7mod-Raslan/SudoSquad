@@ -6,9 +6,7 @@ groups:
     folder: URL Shortener Service
     interval: 1m
     rules:
-      # ------------------------------------
-      # ALERT 1 — High 404 Lookup Rate
-      # ------------------------------------
+
       - uid: alert-404-rate
         title: High 404 Lookup Rate
         condition: A
@@ -20,7 +18,8 @@ groups:
               from: 300
               to: 0
             model:
-              expr: rate(lookups_404_total[5m])
+              expr: sum(rate(lookups_404_total[5m]))
+              instant: true
               intervalMs: 10000
               maxDataPoints: 43200
         noDataState: NoData
@@ -32,12 +31,9 @@ groups:
           summary: "404 lookup rate is high"
           description: "The number of 404 redirect attempts is increasing."
         isPaused: false
-        notification_settings:
-          receiver: sudosquad-grafana
+        notifications:
+          - uid: slack_receiver
 
-      # ------------------------------------
-      # ALERT 2 — High P95 Latency
-      # ------------------------------------
       - uid: alert-latency
         title: High P95 Request Latency
         condition: B
@@ -49,7 +45,8 @@ groups:
               from: 300
               to: 0
             model:
-              expr: histogram_quantile(0.95, sum(rate(request_latency_seconds_bucket[5m])) by (le, endpoint))
+              expr: sum(histogram_quantile(0.95, sum(rate(request_latency_seconds_bucket[5m])) by (le, endpoint)))
+              instant: true
               intervalMs: 10000
               maxDataPoints: 43200
         noDataState: NoData
@@ -61,12 +58,9 @@ groups:
           summary: "High latency detected"
           description: "P95 latency for one or more endpoints is above normal."
         isPaused: false
-        notification_settings:
-          receiver: sudosquad-grafana
+        notifications:
+          - uid: slack_receiver
 
-      # ------------------------------------
-      # ALERT 3 — Redirects Dropped to Zero
-      # ------------------------------------
       - uid: alert-redirect-zero
         title: Redirects Dropped to Zero
         condition: C
@@ -78,7 +72,8 @@ groups:
               from: 300
               to: 0
             model:
-              expr: rate(redirects_total[5m])
+              expr: sum(rate(redirects_total[5m]))
+              instant: true
               intervalMs: 10000
               maxDataPoints: 43200
         noDataState: NoData
@@ -90,5 +85,5 @@ groups:
           summary: "No redirects happening"
           description: "Redirect traffic dropped to zero — possible outage."
         isPaused: false
-        notification_settings:
-          receiver: sudosquad-grafana
+        notifications:
+          - uid: slack_receiver
